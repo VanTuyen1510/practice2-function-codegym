@@ -6,24 +6,28 @@
 </head>
 <body>
 <script>
-    arr=[1,2,3,4,"a","b","c","d",13,212,1,1,1,1]
-    function countCharInArray(c) {
-        let dem=0;
-        for (let i = 0; i <arr.length ; i++) {
-            if(c==arr[i]){
-                dem++;
-            }
-        }
-        if(dem===0){
-            return -1;
-        }
-        return dem;
-    }
-    let ch=prompt("Nhập kí tự muốn tìm");
-    let result=countCharInArray(ch);
-    if(countCharInArray(ch)){
-        document.write("Số lượng kí tự có trong mảng:"+result);
-    }
+
+   function inputArr(param) {
+       let count = 0;
+       let arr = []
+       let n = prompt("Nhập độ dài của mảng");
+       for (let i = 0; i < n;i++) {
+           arr[i] = prompt("Nhập phần tử của mảng :" );
+           if (param == arr[i]) {
+               count++
+           }
+       }
+       document.write("Mảng bạn đã nhập vào:" +arr.join(";") + "<br>");
+       if (count == 0){
+           return -1;
+       }else{
+           return count;
+       }
+
+   }
+
+       let result = prompt("Nhập vào đây số bạn cần tìm");
+       document.write("Số lần bạn cần tìm là " + inputArr(result));
 </script>
 </body>
 </html>
